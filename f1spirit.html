@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<title>CINICSystems.tk</title>
+
+<script language="javascript" type="text/javascript">
+
+	function changer() { 
+ 		
+		password = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+		data = "D11D32342DC005A8162450F20AA12D8C2C0D11D3005A81624C0F20AA12D8C230D11962180DE500119E266E2330A33D03D63D63D023EB1E0020"
+
+		if (document.getElementById("first").value  == "*" ) { 
+			password[0] =  Math.floor(Math.random()* 16);	
+		}else{
+			password[0] = parseInt(document.getElementById("first").value); 	
+		}
+
+		for (i=1; i<25; i++) {
+			if (i < 22) password[i] = document.getElementById("r" + i ).value ;
+			if (i < 23) password[22] = password[22] ^ password[i-1];
+			if (i < 24) password[23] = password[23] +  parseInt(password[i-1]);
+			if (i == 23) password[23] = password[23] & 15;
+			if (i > 1) password[i-1] = String.fromCharCode(65 + (password[i-1] ^ parseInt("0x" + (data.substr(parseInt(document.getElementById("version").value) * 38 , 38)) .substr( (i-2) + password[0] , 1))));
+		}
+		
+		password[0] = String.fromCharCode(65 + password[0]);
+
+		document.getElementById("text").innerHTML = "<input type='text' Readonly STYLE='text-align:center; font-size: 40px;'  maxlength='24' size='32' value='" + password.join("") +"'>";
+	
+	} 
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /></head>
+<body bgcolor="#336699" text="#ffffff" link="#FFFFFF" vlink="#FFFFFF" alink="#CCCCCC" onLoad="changer()">
+
+<div id="header"></div>
+
+<div id="menu" >
+F-1 Spirit Password Generator
+</div>
+
+<div id="homepage" > 
+<BR><BR><BR><BR>
+<p>
+
+<B>F-1 Spirit </B> ( Rc-752 )<BR>
+<BR>
+
+<B>Status: </B> 100%<BR>
+<B>Notes: </B> Completed<BR>
+<B>Thanks to:</B> <a href="http://www.bifi.msxnet.org/?main=/konami/gameinfo/rc752passwords.html">BiFi</a> &amp; <a href="http://www.braingames.getput.com/forum/forum_posts.asp?TID=331&PN=5">Popolon</a><BR>
+<BR><BR>
+</p>
+<form id='formx' method='post' style="background:  url(img/f1spiritbg.jpg) repeat; margin-left: 180px; width:500px;">	
+ 
+  <table  border="0"  cellpadding="0" summary="xxxx" >
+ 
+ 	<caption>
+ 	F-1 Spirit Password Generator 0.1<BR><BR>
+	</caption>
+  
+	<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Stock Race</td>
+    <td>
+ 
+<select id='r2' name='2' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+ 
+	</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Brazil</td>
+    <td>
+<select id='r6' name='6' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+    </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Hungary</td>
+    <td>
+<select id='r14' name='14' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+    </select>
+    </td>
+    <td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>Rally</td>
+    <td>
+<select id='r1' name='1' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+	</td>
+    <td>&nbsp;</td>
+    <td>San Marino </td>
+    <td>
+	
+<select id='r7' name='7' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+
+</td>
+    <td>&nbsp;</td>
+    <td>Austria</td>
+    <td>
+<select id='r15' name='15' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+    </select></td>
+    <td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>F3 Race</td>
+    <td>
+ 
+<select id='r4' name='4' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+    </td>
+    <td>&nbsp;</td>
+    <td>Belgium</td>
+    <td>
+<select id='r8' name='8' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+    </td>
+    <td>&nbsp;</td>
+    <td>Italy</td>
+    <td>
+<select id='r16' name='16' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+    </select></td>
+<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>F3000 Race&nbsp;</td>
+    <td>
+<select id='r5' name='5' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+    </td>
+    <td>&nbsp;</td>
+    <td>Monaco<br>
+	</td>
+    <td>
+<select id='r9' name='9' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+</td>
+    <td>&nbsp;</td>
+    <td>Portugal</td>
+    <td>
+<select id='r17' name='17' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+    </select></td>
+    <td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>Endurance</td>
+    <td>
+<select id='r3' name='3' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+    </td>
+    <td>&nbsp;</td>
+    <td>U.S.A.</td>
+    <td>
+<select id='r10' name='10' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+    </td>
+    <td>&nbsp;</td>
+    <td>Spain</td>
+    <td>
+<select id='r18' name='18' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+    </select></td>
+<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>France</td>
+    <td>
+ 
+<select id='r11' name='11' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+   
+    </td>
+    <td>&nbsp;</td>
+    <td>Mexico</td>
+	<td>
+<select id='r19' name='19' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+    </td>
+<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>Version</td>
+    <td>First</td>
+    <td>&nbsp;</td>
+    <td>Great Britain&nbsp;</td>
+    <td>
+<select id='r12' name='12' style='width: 50px' onchange='changer()'>	 
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select>
+  
+    </td>
+    <td>&nbsp;</td>
+    <td>Japan</td>
+    <td>
+<select id='r20' name='20' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+    </select></td>
+<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>
+	<select id='version' name='version1' onchange='changer()'>
+      <option selected value='0'>GEAR</option>
+      <option value='1'>MISSION</option>
+      <option value='2'>A1</option>
+	</select>
+
+	</td>
+    <td>
+    <select id='first' name='first1' style='width: 50px' onchange='changer()'>
+	 <option selected value='*'>*</option>
+	 <option value='0'>A</option>
+	 <option value='1'>B</option>
+	 <option value='2'>C</option>
+	 <option value='3'>D</option>
+	 <option value='4'>E</option>
+	 <option value='5'>F</option>
+	 <option value='6'>G</option>
+	 <option value='7'>H</option>
+	 <option value='8'>I</option>
+	 <option value='9'>J</option>
+	 <option value='10'>K</option>
+	 <option value='11'>L</option>
+	 <option value='12'>M</option>
+	 <option value='13'>N</option>
+	 <option value='14'>O</option>
+	 <option value='15'>P</option>
+	</select>
+    
+    </td>
+    <td>&nbsp;</td>
+    <td>W Germany </td>
+    <td>
+    <select id='r13' name='13' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+    </select>
+    </td>
+    <td>&nbsp;</td>
+    <td>Australia&nbsp;</td>
+    <td>
+<select id='r21' name='21' style='width: 50px' onchange='changer()'>
+	<option selected value='9'>9</option>	
+	<option value='8'>8</option> 
+	<option value='7'>7</option>    
+	<option value='6'>6</option>    
+ 	<option value='5'>5</option>   
+	<option value='4'>4</option>    
+	<option value='3'>3</option>    
+	<option value='2'>2</option>
+	<option value='1'>1</option>       
+    <option value='0'>0</option>
+</select></td>
+<td>&nbsp;</td>
+	</tr>
+	<tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+	</tr>
+	<tr>
+  </tr>
+ 
+ </table>
+</form>
+<BR>
+
+<center>
+<Span id="text"></Span><BR><BR><BR>
+</center>
+<p>
+
+<B>Multiple versions of F-1 Spirit ?</B><BR><BR>
+There are two European versions of F-1 spirit available,<BR> 
+look at the right of the racing screen.<BR>
+It says "MISSION" or "GEAR"<BR><BR>
+
+
+Also there is the rare <a href="http://www.msxnet.org/gtinter/a1spiri/a1spiri.htm">A-1 Spirit</a> Version, it was released together with<BR>
+a joystick called "<a href="http://www.msxnet.org/gtinter/a1spiri/a1adver.jpg">Joy Handle</a>" made by Panasonic.<BR><BR>
+All these versions have a slight difference in the password system and therefore generate different passwords.<BR>
+  
+</p> 
+<BR><BR><BR>
+
+</div>
+
+<div id="footer">
+CINIC Systems
+<script type="text/javascript">document.write(new Date().getFullYear())</script> 
+
+<BR><BR><BR><BR><BR><BR>
+F-1 Spirit The Way To Formula-1
+ESCON
+ESCOFF
+MAXPOINT
+HYPEROFF
+MITAIYOENDDEMO
+SHA1 42fbb18722df3e34e5b0f935a2dc0ce0d85099e9
+CRC32 64d2df7c
+</div>
+</body>

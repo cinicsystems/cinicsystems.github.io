@@ -1,0 +1,57 @@
+#header {
+	width:799px;
+	height:100px;
+	margin:auto;
+	overflow:hidden;
+	background: url(../img/ciniclogo6.jpg) #336699;
+}
+#menu {
+	background: #1B3651;
+	text-align: center;
+	width:799px;
+	height:20px;
+	margin:auto;
+	overflow:hidden;
+	font-family:Tahoma;
+}
+#homepage {
+	background:  #336699 url(../img/naamloos2.bmp) repeat;
+	margin:auto;
+	width: 799px; 
+	height: auto;
+	font-family:Tahoma;
+	overflow:hidden;
+}
+p {
+	margin-left: 180px; 
+}
+
+#blog {
+	margin-left: 80px; 
+}
+
+#form {
+	margin-left: 180px; 
+	background: #1B3651;
+	width:350px;
+}
+
+#form2 {
+	margin-left: 80px; 
+	background:  url(../img/fbird.jpg) repeat;
+	width:640px;	
+}
+
+#footer {
+	overflow:hidden;
+	background: #1B3651;
+	text-align: center;
+	width:799px;
+	height:20px;
+	margin:auto;
+	
+	font-family:Tahoma;
+}
+.clear {
+	CLEAR: both
+}

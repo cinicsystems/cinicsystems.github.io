@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<title>CINICSystems.tk</title>
+
+<script language="javascript" type="text/javascript">
+
+	function changer() { 
+ 		
+		// Display Money yen
+		document.getElementById("money").innerHTML = "&yen;&nbsp;"+ document.getElementById("item4").value 
+																  + document.getElementById("item5").value
+																  + document.getElementById("item2").value
+																  + document.getElementById("item3").value
+																  + ".-";
+																  
+		password = new Array('0','2','9','6','4','5','8','1','7','9','5','3','8','1','4','3');
+
+		// Checkbox
+		// Bit 3 can only be ON if bits 1 & 2 are OFF 
+		if (document.getElementById("item14").checked) password[14] = (parseInt(password[14]) + 4) %10 ;
+		if (document.getElementById("item15").checked) password[14] = (parseInt(password[14]) + 2) %10 ;		
+		if (document.getElementById("item16").checked) password[14] = (parseInt(password[14]) + 1) %10 ;
+			
+		if (document.getElementById("item17").checked == false) password[15] = (parseInt(password[15]) + 2) %10 ;		
+		if (document.getElementById("item18").checked == false) password[15] = (parseInt(password[15]) + 1) %10 ;		
+		
+		
+		for (i=1; i<16; i++) {
+			
+				if (i < 14) password[i] = (parseInt(password[i]) + parseInt(document.getElementById("item" + i ).value)) % 10;
+				password[0] = (parseInt(password[0]) + parseInt(password[i])); //%10  ;
+		}
+		password[0] =  parseInt(password[0])  & 7 ;
+		
+		document.getElementById("text").innerHTML = 
+		"<input type='text' Readonly STYLE='text-align:center; font-size: 40px;'  maxlength='16' size='18' value='" + password.join("") +"'>";
+	} 
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /></head>
+<body bgcolor="#336699" text="#ffffff" link="#FFFFFF" vlink="#FFFFFF" alink="#CCCCCC" onLoad="changer()">
+
+<div id="header"></div>
+
+<div id="menu" >
+Zukkoke Yajikita Onmitsu Douchuu
+</div>
+
+<div id="homepage" > 
+<BR><BR><BR><BR>
+<p>
+
+<B>Zukkoke Yajikita Onmitsu Douchuut</B><BR>
+<BR>
+
+<B>Status: </B> 97%<BR>
+<B>Notes: </B> Last digits to be investigated<BR>
+<B>Thanks to: </B>Wyrdwad<BR>
+<BR><BR>
+</p>
+<form id='formx' method='post' style="background:  url(img/zukkoke.jpg) repeat; margin-left: 180px; width:410px;">	
+ 
+  <table  border="0"  cellpadding="0" summary="xxxx" >
+ 
+ 	<caption>
+ 	Zukkoke Yajikita Onmitsu Douchuu <br />
+ 	Password Generator 0.2<BR><BR>
+	</caption>
+  
+	<tr>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Coins</td>
+    <td><Span id="money"></Span></td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>Dumpling&nbsp;&nbsp;</td>
+    <td>
+	<select id='item6' name='6' style='width: 40px' onchange='changer()'>	 
+	 <option selected value='9'>9</option>	
+	 <option value='8'>8</option> 
+	 <option value='7'>7</option>    
+	 <option value='6'>6</option>    
+ 	 <option value='5'>5</option>   
+	 <option value='4'>4</option>    
+	 <option value='3'>3</option>    
+	 <option value='2'>2</option>
+	 <option value='1'>1</option>       
+     <option value='0'>0</option>
+	 </select>
+    </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+   
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>
+    <select id='item4' name='4' style='width: 40px' onchange='changer()'>
+      <option selected="selected" value='9'>9</option>
+      <option value='8'>8</option>
+      <option value='7'>7</option>
+      <option value='6'>6</option>
+      <option value='5'>5</option>
+      <option value='4'>4</option>
+      <option value='3'>3</option>
+      <option value='2'>2</option>
+      <option value='1'>1</option>
+      <option value='0'>0</option>
+    </select>
+    
+    <select id='item5' name='5' style='width: 40px' onchange='changer()'>
+      <option selected="selected" value='9'>9</option>
+      <option value='8'>8</option>
+      <option value='7'>7</option>
+      <option value='6'>6</option>
+      <option value='5'>5</option>
+      <option value='4'>4</option>
+      <option value='3'>3</option>
+      <option value='2'>2</option>
+      <option value='1'>1</option>
+      <option value='0'>0</option>
+    </select>
+    </td>
+    <td>
+    <select id='item2' name='2' style='width: 40px' onchange='changer()'>
+      <option selected="selected" value='9'>9</option>
+      <option value='9'>9</option>
+      <option value='8'>8</option>
+      <option value='7'>7</option>
+      <option value='6'>6</option>
+      <option value='5'>5</option>
+      <option value='4'>4</option>
+      <option value='3'>3</option>
+      <option value='2'>2</option>
+      <option value='1'>1</option>
+      <option value='0'>0</option>
+    </select>
+    <select id='item3' name='3' style='width: 40px' onchange='changer()'>
+      <option selected="selected" value='9'>9</option>
+      <option value='9'>9</option>
+      <option value='8'>8</option>
+      <option value='7'>7</option>
+      <option value='6'>6</option>
+      <option value='5'>5</option>
+      <option value='4'>4</option>
+      <option value='3'>3</option>
+      <option value='2'>2</option>
+      <option value='1'>1</option>
+      <option value='0'>0</option>
+    </select>
+    
+    </td>
+    <td>&nbsp;</td>
+    <td>Pass </td>
+    <td>
+	
+	<select id='item7' name='7' style='width: 40px' onchange='changer()'>	 
+	 <option selected value='8'>8</option>	
+	 <option value='7'>7</option>    
+	 <option value='6'>6</option>    
+ 	 <option value='5'>5</option>   
+	 <option value='4'>4</option>    
+	 <option value='3'>3</option>    
+	 <option value='2'>2</option>
+	 <option value='1'>1</option>       
+     <option value='0'>0</option>
+	</select>
+
+	</td>
+    <td>&nbsp;</td>
+  	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td></td>
+    <td></td>
+    <td>&nbsp;</td>
+    <td>Hairpin</td>
+    <td>
+
+	<select id='item8' name='8' style='width: 40px' onchange='changer()'>	 
+	 <option selected value='9'>9</option>	
+	 <option value='8'>8</option> 
+	 <option value='7'>7</option>    
+	 <option value='6'>6</option>    
+ 	 <option value='5'>5</option>   
+	 <option value='4'>4</option>    
+	 <option value='3'>3</option>    
+	 <option value='2'>2</option>
+	 <option value='1'>1</option>       
+     <option value='0'>0</option>
+	</select>
+    
+    </td>
+    <td>&nbsp;</td>
+ 	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>Secrets</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Sword<br>
+	</td>
+    <td>
+    
+	<select id='item9' name='9' style='width: 40px' onchange='changer()'>	 
+	 <option selected value='9'>9</option>	
+	 <option value='8'>8</option> 
+	 <option value='7'>7</option>    
+	 <option value='6'>6</option>    
+ 	 <option value='5'>5</option>   
+	 <option value='4'>4</option>    
+	 <option value='3'>3</option>    
+	 <option value='2'>2</option>
+	 <option value='1'>1</option>       
+     <option value='0'>0</option>
+	</select>
+	
+    </td>
+    <td>&nbsp;</td>
+   	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>
+    	<input type="checkbox" id="item14" name="14" checked="checked" onchange='changer()' />Medicine</td>
+    <td>
+    	<input type="checkbox" id="item15" name="15" checked="checked" onchange='changer()' />?Fortunreteller </td>
+    <td>&nbsp;</td>
+    <td>Medicine</td>
+    <td>
+
+	<select id='item10' name='10' style='width: 40px' onchange='changer()'>	 
+	 <option selected value='9'>9</option>	
+	 <option value='8'>8</option> 
+	 <option value='7'>7</option>    
+	 <option value='6'>6</option>    
+ 	 <option value='5'>5</option>   
+	 <option value='4'>4</option>    
+	 <option value='3'>3</option>    
+	 <option value='2'>2</option>
+	 <option value='1'>1</option>       
+     <option value='0'>0</option>
+	</select>
+    
+    </td>
+    <td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>
+	    <input type="checkbox" id="item16" name="16" checked="checked" onchange='changer()' />Resque</td>
+    <td>
+		<input type="checkbox" id="item17" name="17" onchange='changer()' />Buy 1</td>
+    <td>&nbsp;</td>
+    <td>Umbrella</td>
+    <td>
+ 
+	<select id='item11' name='11' style='width: 40px' onchange='changer()'>	 
+	 <option selected value='9'>9</option>	
+	 <option value='8'>8</option> 
+	 <option value='7'>7</option>    
+	 <option value='6'>6</option>    
+ 	 <option value='5'>5</option>   
+	 <option value='4'>4</option>    
+	 <option value='3'>3</option>    
+	 <option value='2'>2</option>
+	 <option value='1'>1</option>       
+     <option value='0'>0</option>
+	</select>
+   
+    </td>
+    <td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>
+    	<input type="checkbox" id="item18" name="18" onchange='changer()' />Buy 2</td>
+    <td></td>
+    <td>&nbsp;</td>
+    <td>Key</td>
+    <td>
+
+	<select id='item12' name='12' style='width: 40px' onchange='changer()'>	 
+	 <option selected value='5'>5</option>	
+	 <option value='4'>4</option>    
+	 <option value='3'>3</option>    
+	 <option value='2'>2</option>
+	 <option value='1'>1</option>       
+     <option value='0'>0</option>
+	</select>
+  
+    </td>
+    <td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td>Secrets</td>
+    <td>
+    
+    <select id='item1' name='1' style='width: 40px' onchange='changer()'>
+      <option selected="selected" value='5'>5</option>
+      <option value='4'>4</option>
+      <option value='3'>3</option>
+      <option value='2'>2</option>
+      <option value='1'>1</option>
+      <option value='0'>0</option>
+    </select>
+    
+    </td>
+    <td>&nbsp;</td>
+    <td>Sandals </td>
+    <td>
+    
+    <select id='item13' name='13' style='width: 40px' onchange='changer()'>
+	 <option selected value='9'>9</option>	
+	 <option value='8'>8</option> 
+	 <option value='7'>7</option>    
+	 <option value='6'>6</option>    
+ 	 <option value='5'>5</option>   
+	 <option value='4'>4</option>    
+	 <option value='3'>3</option>    
+	 <option value='2'>2</option>
+	 <option value='1'>1</option>       
+     <option value='0'>0</option>
+    </select>
+    
+    </td>
+    <td>&nbsp;</td>
+	</tr><tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>&nbsp;</td>
+    <td></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+	</tr>
+	<tr>
+    </tr>
+ 
+ </table>
+</form>
+<BR>
+
+<center>
+<Span id="text"></Span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR><BR><BR>
+</center>
+<p>
+
+<B>Version Info:</B><BR><BR> 
+v 0.1 - Initial Version.<BR>
+v 0.2 - Added missing secrets digits.
+<BR>
+  
+</p> 
+<BR><BR><BR>
+
+</div>
+
+<div id="footer">
+CINIC Systems
+<script type="text/javascript">document.write(new Date().getFullYear())</script> 
+
+<BR><BR><BR><BR><BR><BR>
+Zukkoke Yajikita Onmitsu Douchuut
+ずっこけやじきた隠密道中
+</div>
+</body>

@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<title>CINICSystems.tk</title>
+
+<script language="javascript" type="text/javascript">
+var i = 0; 
+var pass = "";
+var code = new Array(0,0,0,0);
+var radiox = new Array("mov","bas","arm","opt");
+
+	function changer() { 
+
+	code[0] = 0; code[1] = 0; code[2] = 0; code[3] = 0; code[4] = 0; pass = "" ;
+	
+		for (i2 = 0; i2 < 4; i2++) {
+				
+			var radios = document.getElementsByName(radiox[i2]);
+			for(var i = 0; i < radios.length; i++){
+    		
+				if(radios[i].checked){
+        			code[2] = code[2] + parseInt(radios[i].value);
+    			}
+			}
+		}
+		
+		
+		if (parseInt(document.getElementById("level").value) == -1 ) code[1] = 0 
+		else code[1] = parseInt(document.getElementById("level").value) + parseInt(document.getElementById("power").value);
+
+
+		code[0] = Math.floor((Math.random()*255)+1); 
+		code[4] = code[0];
+		code[3] = (((code[0] + code[1]) + code[2]) & 255);
+		
+
+		for (var i = 1; i < 4; i++ ) {
+        	code[4] = (code[4] * 5 + ((((code[4] * 5) & 65280) / 256) + ((code[4] * 5) * 256)) & 65535);
+        	code[i] = (code[i] + ((code[4] & 65280) / 256))& 255;
+		}
+		
+
+
+    
+		for (var i = 0; i < 4; i++ ) { 
+        	
+			if ((code[i] & 31) < 26 ) pass = pass + String.fromCharCode(65 + (code[i] & 31)); 		
+			else pass = pass + String.fromCharCode(24 + (code[i] & 31));
+			
+        	if (((code[i] & 248) / 8) < 26 ) pass = pass + String.fromCharCode(65 + ((code[i] & 248) / 8));
+			else pass = pass + String.fromCharCode(24 + ((code[i] & 248) / 8)); 
+		}
+		
+document.getElementById("text").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' Readonly STYLE='text-align:center; font-size: 40px;'  maxlength='8' size='10' value='" + pass + "'>";
+	
+	
+	} 
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /></head>
+<body bgcolor="#336699" text="#ffffff" link="#FFFFFF" vlink="#FFFFFF" alink="#CCCCCC" onLoad="changer()">
+
+<div id="header"></div>
+
+<div id="menu" >
+Girly Block Password Generator
+</div>
+
+<div id="homepage" > 
+<BR><BR><BR><BR>
+<p>
+
+<B>Girly Block </B> Password Generator<BR>
+<BR>
+
+<B>Status: </B> 100%<BR>
+<B>Notes: </B> Completed<BR>
+<B>Thanks to:</B> -<BR>
+<BR><BR>
+</p>
+<form id='formx' name='form' style='margin-left: 180px; background:  url(img/girly2.jpg) repeat; height:300px; width:400px;'>
+
+<table  border="0"  cellpadding="0" summary="xxxx" >
+ 
+ 	<caption>
+ 	Girly Block PassGen 0.7 <BR><BR><BR>
+	</caption>
+  
+	<tr>
+	<td width="20">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td width="78" nowrap="nowrap">Level </td>
+    <td width="51" nowrap="nowrap">
+
+    <select id='level' name='level1' onchange='changer()'>
+      <option value='224'>08</option>
+      <option value='192'>07</option>
+      <option value='160'>06</option>
+      <option value='128'>05</option>
+      <option value='96' >04</option>
+      <option value='64' >03</option>
+      <option value='32' >02</option>
+      <option value='0'  >01</option>
+      <option value='-1'  >00</option>
+    </select></td>
+    
+    <td width="20">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td width="44" nowrap="nowrap">Power UP</td>
+    <td width="51" nowrap="nowrap">
+	
+    <select id='power' name='power1' onchange='changer()'>
+	 <option value='31'>31</option>
+  	 <option value='30'>30</option>
+  	 <option value='29'>29</option>
+  	 <option value='28'>28</option>
+  	 <option value='27'>27</option>
+  	 <option value='26'>26</option>
+  	 <option value='25'>25</option>
+  	 <option value='24'>24</option>
+  	 <option value='23'>23</option>
+  	 <option value='22'>22</option>
+  	 <option value='21'>21</option>
+  	 <option value='20'>20</option>
+  	 <option value='19'>19</option>
+  	 <option value='18'>18</option>
+  	 <option value='17'>17</option>
+  	 <option value='16'>16</option>
+  	 <option value='15'>15</option>
+  	 <option value='14'>14</option>
+  	 <option value='13'>13</option>
+  	 <option value='12'>12</option>
+  	 <option value='11'>11</option>
+  	 <option value='10'>10</option>
+  	 <option value='9'>09</option>
+  	 <option value='8'>08</option>
+  	 <option value='7'>07</option>
+  	 <option value='6'>06</option>
+  	 <option value='5'>05</option>
+  	 <option value='4'>04</option>
+  	 <option value='3'>03</option>
+  	 <option value='2'>02</option>
+  	 <option value='1'>01</option>
+	 <option value='0'>00</option>
+	</select>
+    </td>
+    <td width="110">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+    <td nowrap="nowrap">
+    <center><br><b>Moving</b><br></center>
+	<input type="radio" name="mov" value="0" id="moving_0" onclick='changer()' checked />2-Legs<br>
+	<input type="radio" name="mov" value="1" id="moving_1" onclick='changer()' />4-Legs<br>
+	<input type="radio" name="mov" value="2" id="moving_2" onclick='changer()' />Belt<br>
+	<input type="radio" name="mov" value="3" id="moving_3" onclick='changer()' />Hover<br>
+              
+    </td>
+    <td nowrap="nowrap">
+	<center><br><b>Basic</b><br></center>
+    <input type="radio" name="bas" value="0"  id="basic_0" onclick='changer()' checked/>GRF-K2<br>
+	<input type="radio" name="bas" value="4"  id="basic_1" onclick='changer()' />IBV-07<br>
+	<input type="radio" name="bas" value="8"  id="basic_2" onclick='changer()' />PKD<br>
+    <input type="radio" name="bas" value="12" id="basic_3" onclick='changer()' />JPH-K8<br>
+    </td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">
+    <center><br><b>Arms</b><br></center>
+    <input type="radio" name="arm" value="0"  id="arms_0" onclick='changer()' checked/>Bomber <br>
+	<input type="radio" name="arm" value="16" id="arms_1" onclick='changer()' />Launch<br>
+	<input type="radio" name="arm" value="32" id="arms_2" onclick='changer()' />Spin<br>
+	<input type="radio" name="arm" value="48" id="arms_3" onclick='changer()' />Wave<br>
+    </td>
+    <td nowrap="nowrap">
+    <center><br><b>Option</b><br></center>
+	<input type="radio" name="opt" value="0"   id="option_0" onclick='changer()' checked />ERG-T</label><br>
+	<input type="radio" name="opt" value="64"  id="option_1" onclick='changer()' />Zeno<br>
+	<input type="radio" name="opt" value="128" id="option_2" onclick='changer()' />Boost<br>
+	<input type="radio" name="opt" value="192" id="option_3" onclick='changer()' />Shield<br>
+    </td>
+    <td>&nbsp;</td>
+	
+    </tr>
+</table>
+
+
+<br>
+<br>
+<Span id="text"></Span><BR><BR><BR>
+
+</form>
+
+<p>
+<BR><BR>
+<B>Info</B>
+<BR>
+More info later.
+<BR><BR><BR><BR><BR>
+
+</p>
+<BR><BR><BR>
+
+</div>
+
+<div id="footer">
+CINIC Systems
+<script type="text/javascript">document.write(new Date().getFullYear())</script> 
+
+<BR><BR><BR><BR><BR><BR>
+Grly Block (1988) (Telenet) (J).rom
+•ZZZ-UNK-GIRLY BLOCK.DSK
+J-122-S-01790-A 
+NGS-001
+Compile
+ABBBBBBB
+DY2XWG23
+3THAQGOJ
+PRFYLZIR
+</div>
+</body>
