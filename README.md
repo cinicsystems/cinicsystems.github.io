@@ -1,2 +1,2 @@
 # cinicsystems.github.io
-CINIC Systems
+[CINIC Systems](cinicsystems.github.io)
