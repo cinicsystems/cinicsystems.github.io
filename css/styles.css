@@ -42,6 +42,11 @@ p {
 	width:640px;	
 }
 
+#webring {
+	margin-left: 80px; 
+	width:640px;	
+}
+
 #footer {
 	overflow:hidden;
 	background: #1B3651;
