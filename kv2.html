@@ -25,7 +25,8 @@ var rotation = 0;
 		
 		password = String.fromCharCode((65 + (de & 61440) / 4096) ,
 					       (65 + (de & 3840) / 256) ,
-					       (65 + (de & 240) / 16) ,(65 + (de & 15)) ,
+					       (65 + (de & 240) / 16) ,
+					       (65 + (de & 15)) ,
 					       (65 + Math.floor(Math.random()* 16)) , 
 					       (65 + rotation) ,
 					       (65 + Math.floor(Math.random()* 16)) ,
