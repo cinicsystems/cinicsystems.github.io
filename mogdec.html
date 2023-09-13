@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<title>CINICSystems</title>
+
+<script language="javascript" type="text/javascript">
+var i = 0;
+label1 = "";
+label2 = "";
+label3 = "";
+temp = "";
+test = 0;
+
+const regex = /[^a-zA-Z0-9]+/g
+const x = ["X", "Right Password !", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+	function keydown() {
+		if (password.value.match(regex)) password.value=password.value.replace(regex,'');
+		//password.value = password.value.toUpperCase();
+	}
+
+
+	function keyup() {
+
+		password.value = password.value.toUpperCase();
+
+		// Filter out characters exept [0-9] [a-p] [A-P]
+		if (password.value.match(regex)) password.value=password.value.replace(regex,'');
+
+
+
+		// If the 8 character Code is the same, no need to calculate it again.
+		test = password.value;
+		test = test.toUpperCase();
+		document.getElementById("result").innerHTML = "-";
+		
+		if (test.length != 0) {
+
+			label1 = 0;
+			for (i = 0; i < test.length; i++) {
+
+
+
+				if (test.charCodeAt(i) > 64) {
+					label1 = (label1 + test.charCodeAt(i) ) - 54 & 255;
+					label2 = (label1.toString(16)) + " -> " + (label1.toString(16) & 255);
+				} else {
+					label1 = (label1 + test.charCodeAt(i) ) - 47 & 255;
+					label2 = (label1.toString(16)) + " -> " + (label1.toString(16) & 255);					
+				}
+			}
+
+			temp = 256 - label1;
+			label3 = "";
+			while (temp > 36) {
+				label3 = label3 + "Z";
+				temp = temp - 36;
+			}
+
+			label3 = label3 + x[temp];
+			
+			sug = "";
+			if (label1 != 255) sug = "  Suggestions =  ";
+			
+			openmsx = "";
+			for (i = 0; i < test.length; i++) {
+				openmsx = openmsx + test[i] + " ";
+			}
+			
+			document.getElementById("result").innerHTML = sug + label3 + " &nbsp;&nbsp;&nbsp; Length = " + test.length + "<br><br>" + openmsx;
+
+
+		}
+	}
+
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /></head>
+<body bgcolor="#336699" text="#ffffff" link="#FFFFFF" vlink="#FFFFFF" alink="#CCCCCC" onLoad="keyup()">
+
+<div id="header"></div>
+
+<div id="menu" >
+The Maze Of Galious Password Decoder
+</div>
+
+<div id="homepage" > 
+<BR><BR><BR><BR>
+<p>
+
+<B>The Maze Of Galious </B> ( Rc-749 )<BR>
+<BR>
+
+<B>Status: </B> 91%<BR>
+<B>Notes: </B> v0.1 (Testing, Not Completed)<BR>
+<B>Thanks to:</B> MP83<BR>
+<BR><BR>
+
+<input type=text id=password value="ANNKDANKZINE36" style="text-align:center; font-size: 40px; width:550px;" maxlength="43" onkeypress="keydown()" onkeyup="keyup()">
+
+</p>
+<table border="3" width="550" style="margin-left: 160px; text-align: center;">
+    <td id="result">Password</td>
+</table>
+
+
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+
+<BR>
+</div>
+
+<div id="footer">
+CINIC Systems
+<script type="text/javascript">document.write(new Date().getFullYear())</script> 
+
+<BR><BR><BR><BR><BR><BR>
+King's Valley 2 Password Generator
+King's Valley II Password Generator
+King's Valley II - The Seal of El Giza
+King's Valley 2 - The Seal of El Giza
+HELPMODE
+KINGMODE
+DEMOMODE
+GAMEMODE
+FESTIVAL
+TRYAGAIN
+SHA1 cfd872d005b7bd4cdd6e06c4c0162191f0b0415d MSX1
+SHA1 5ec8811254dc762c6852289a08acf22954404f0d MSX2
+SHA1 b5acea41aeabb5daa4183953f800d47db0c39fb5 UL
+CRC32 e82a8e8e MSX1
+CRC32 b1cb1052 MSX2
+CRC32 51e01490 UL
+</div>
+</body>
