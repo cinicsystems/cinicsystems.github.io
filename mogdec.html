@@ -58,16 +58,20 @@ const x = ["X", "Right Password !", "0", "1", "2", "3", "4", "5", "6", "7", "8",
 				temp = temp - 36;
 			}
 
-			label3 = label3 + x[temp];
-			
+
 			sug = "";
-			if (label1 != 255) sug = "  Suggestions =  ";
-			
+			if (label1 != 255) {
+				sug = "  Suggestions =  ";
+			} else {
+			label3 = label3 + x[temp];
+			}
+
+
 			openmsx = "";
 			for (i = 0; i < test.length; i++) {
 				openmsx = openmsx + test[i] + " ";
 			}
-			
+
 			document.getElementById("result").innerHTML = sug + label3 + " &nbsp;&nbsp;&nbsp; Length = " + test.length + "<br><br>" + openmsx;
 
 
