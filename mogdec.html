@@ -62,8 +62,11 @@ const x = ["X", "Right Password !", "0", "1", "2", "3", "4", "5", "6", "7", "8",
 			sug = "";
 			if (label1 != 255) {
 				sug = "  Suggestions =  ";
+				if (temp > 1) {
+					label3 = label3 + x[temp]; // Add Remainder 
+				}
 			} else {
-			label3 = label3 + x[temp];
+				label3 = label3 + x[temp]; // temp = 1 -> Right Password 
 			}
 
 
@@ -97,12 +100,12 @@ The Maze Of Galious Password Decoder
 <B>The Maze Of Galious </B> ( Rc-749 )<BR>
 <BR>
 
-<B>Status: </B> 91%<BR>
-<B>Notes: </B> v0.1 (Testing, Not Completed)<BR>
-<B>Thanks to:</B> MP83<BR>
+<B>Status: </B> 95% (Testing)<BR>
+<B>Notes: </B> v0.2 - (26-03-24 -> Small remainder Bug solved)<BR>
+<B>Thanks to:</B> MP83, Mashira<BR>
 <BR><BR>
 
-<input type=text id=password value="ANNKDANKZINE36" style="text-align:center; font-size: 40px; width:550px;" maxlength="43" onkeypress="keydown()" onkeyup="keyup()">
+<input type=text id=password value="MASHIRAMSXT" style="text-align:center; font-size: 40px; width:550px;" maxlength="43" onkeypress="keydown()" onkeyup="keyup()">
 
 </p>
 <table border="3" width="550" style="margin-left: 160px; text-align: center;">
